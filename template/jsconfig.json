@@ -1,0 +1,20 @@
+{
+  "exclude": ["node_modules"],
+  "include": ["./src/**/*.js"],
+  "compilerOptions": {
+      "sourceMap": true,
+      "noImplicitAny": true,
+      "module": "commonjs",
+      "target": "es6",
+      "jsx": "react",
+      "esModuleInterop": true,
+      "baseUrl": ".",
+      "paths": {
+        "@/*": ["./src/*"],
+        "components/*": ["./src/components/*"],
+        "styles/*": ["./src/styles/*"],
+        "revali/*": ["./.revali/*"],
+        "typings/*": ["./typings/*"]
+      }
+  }
+}
