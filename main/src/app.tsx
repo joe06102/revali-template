@@ -33,21 +33,17 @@ const App: React.FC = ({ children }) => {
       </Navbar>
       <section className='section'>
         <section className='section-left'>
-          {
-            MenuItems.map((item, index) => (
-              <Dropdown key={item.to} title={item.name} expand={index === 0}>
-                {
-                  item?.children?.map((c) => (
-                    <Link key={c.to} to={c.to}><div>{c.name}</div></Link>
-                  ))
-                }
-              </Dropdown>
-            ))
-          }
+          {MenuItems.map((item, index) => (
+            <Dropdown key={item.to} title={item.name} expand={index === 0}>
+              {item?.children?.map((c) => (
+                <Link key={c.to} to={c.to}>
+                  <div>{c.name}</div>
+                </Link>
+              ))}
+            </Dropdown>
+          ))}
         </section>
-        <section className='section-right'>
-          {children}
-        </section>
+        <section className='section-right'>{children}</section>
       </section>
     </div>
   )

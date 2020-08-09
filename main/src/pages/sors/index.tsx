@@ -17,7 +17,7 @@ const About: React.FC<IAboutProps> = (props) => {
 
   return (
     <div className='about-wrap'>
-      <h3>纯粹的客户端渲染，服务端不取数据 (需要在revali.net/bbs页面下登录后) </h3>
+      <h3>纯粹的客户端渲染，服务端不取数据 (需要在dxy.net/bbs页面下登录后) </h3>
       <div>
         {
           data?.result?.map((item) => <div key={item.id}>{item.lastMessageSimple}</div>)

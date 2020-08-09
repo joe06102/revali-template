@@ -77,7 +77,7 @@ const sharedPath = {
   assets: resolve('dist/assets'),
   css: resolve('dist/assets/css'),
   js: resolve('dist/assets/js'),
-  publicPath: isDEV ? '/statics/' : '//assets.revalicdn.com/gitrepo/' //修改此处即可
+  publicPath: isDEV ? '/statics/' : '//assets.dxycdn.com/gitrepo/' //修改此处即可
 }
 ```
 

@@ -13,7 +13,7 @@ export interface IRequestOption {
   path: string
 }
 
-export interface IRevaliResponse<T = any> {
+export interface IDxyResponse<T = any> {
   code: string
   message?: string
   data: T
@@ -40,7 +40,7 @@ export const isSimpleRequest = (options: IRequestOption) => {
 }
 
 // eslint-disable-next-line max-len
-export const clientRequest = (options: IRequestOption, params?: any, config?: any): Promise<IRevaliResponse> => {
+export const clientRequest = (options: IRequestOption, params?: any, config?: any): Promise<IDxyResponse> => {
   const pathname = getRequestPath(options)
   const isSimple = isSimpleRequest(options)
   const axiosConfig = { ...config }
@@ -85,7 +85,7 @@ export const serverRequstFactory = (req: Request, res: Response) => (
   options: IRequestOption,
   params?: any,
   config?: any,
-): Promise<IRevaliResponse> => {
+): Promise<IDxyResponse> => {
   const serverRequest = getServerAxiosInstance(req, res, options)
   const pathname = getRequestPath(options)
   const isSimple = isSimpleRequest(options)
@@ -117,7 +117,7 @@ export const serverRequstFactory = (req: Request, res: Response) => (
   return requestor.then((response: any) => response.data)
 }
 
-export const getResponseData = <T extends IRevaliResponse>(
+export const getResponseData = <T extends IDxyResponse>(
   res: T,
 ): Promise<any> => {
   if (get(res, 'code') !== 'success') {
